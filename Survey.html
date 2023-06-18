@@ -1,0 +1,166 @@
+<html>
+<head>
+  <script type="text/javascript" src="js/cookie.js"></script>
+  <script>
+  function myFunction(val) {
+    arr = val.split(",");
+    sum=0,max=-1;
+    if(arr.length != 11){
+      alert("Please enter 11 values from 1-100");
+    }
+
+    else{
+      for(i=0;i<arr.length;i++){
+        sum=sum+ parseInt(arr[i]);
+        if(max<parseInt(arr[i]))
+        max = parseInt(arr[i]);
+      }
+ document.getElementById("avg").value=sum/arr.length;
+ document.getElementById("max").value=max;
+  }
+}
+  </script>
+  <meta charset = "utf-8">
+  <title>
+     CS Department Survey
+  </title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    ul.pagination {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+    }
+    ul.pagination li {display: inline;}
+    ul.pagination li a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 5px solid #006633;
+      font-size: 18px;
+    }
+    ul.pagination li a.active {
+      background-color: #eee;
+      color: black;
+      border: 1px solid #ddd;
+    }
+    ul.pagination li a:hover:not(.active) {background-color: #FFCC33;}
+  </style>
+</head>
+<body onload="checkCookie()", style = "background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);">
+  <marquee>Wei Jen Cheng's page</marquee>
+  <ul class = "pagination">
+    <li><a href="http://mason.gmu.edu/~wcheng8/testaccess"> Home </a></li>
+    <li><a href="http://mason.gmu.edu/~wcheng8/testaccess/CSdegree.html"> MS Degrees </a></li>
+    <li><a href="http://mason.gmu.edu/~wcheng8/testaccess/Survey.html"> CS Department Survey </a></li>
+    <li><a href="http://mason.gmu.edu/~wcheng8/testaccess/eh_survey.html"> Event handle Survey </a></li>
+    <li><a href="http://mason.gmu.edu/~wcheng8/testaccess/Ajax_survey.html"> Ajax Survey </a></li>
+  </ul>
+  <h1> CS Department Survey </h1><hr style="height:2px;border-width:0;color:green;background-color:green">
+  <b><font color="red">*</font> Is the fields that you must filled in.</b>
+  <form name = "Survey" method="get" >
+    <ul>
+      <li>Personal Information
+        <p><font color="red">*</font> Name:</p>
+        <p><input required autocomplete="on" autofocus name="name" type="text" placeholder="your name"></p>
+
+        <p><font color="red">*</font> Email:</p>
+        <p><input required autocomplete="on" size = "30" name="email" type="text" placeholder="your email"></p>
+
+        <p>URL:</p>
+        <p><input autocomplete="on" size = "30" name="url" type="url" placeholder="your url"></p>
+
+        <p>Address:</p>
+        <p><input autocomplete="on" size = "60" name="address" type="text" placeholder="the street address you are living"></p>
+
+        <p>City:</p>
+        <p><input autocomplete="on" size = "10" name="city" type="text" placeholder="city name"></p>
+
+        <p>State:</p>
+        <p><input autocomplete="on" size = "10" name="state" type="text" placeholder="state name"></p>
+
+        <p>Zip:</p>
+        <p><input autocomplete="on" size = "10" name="zip" type="text" placeholder="the zip code"></p>
+
+        <p>TEL:</p>
+        <p><input autocomplete="on" size = "15" name="tel" type="text" placeholder="your phone number"></p>
+      </li>
+
+      <li>
+      <p><font color="red">*</font> Date:</p>
+      <p><input required type="date" id="start" name="trip-start"
+        value="2021-09-01"
+        min="2021-09-01" max="2025-12-31"></p>
+      </li>
+
+      <li>
+        <p><font color="red">*</font> How do you became interested in the university:</p>
+        <p><input type="radio" name="interest" value="Friends" required> Friends</p>
+        <p><input type="radio" name="interest" value="Television"> Television</p>
+        <p><input type="radio" name="interest" value="Internet"> Internet</p>
+        <p><input type="radio" name="interest" value="Other"> Other</p>
+      </li>
+
+      <li>
+        <p><font color="red">*</font> What you liked most about the campus:</p>
+        <div>
+          <input type="checkbox" id="Students" name="like" required>
+          <label for="Students">Students</label>
+          <input type="checkbox" id="Location" name="like">
+          <label for="horns">Location</label>
+          <input type="checkbox" id="Campus" name="like">
+          <label for="horns">Campus</label>
+          <input type="checkbox" id="Atmosphere" name="like">
+          <label for="horns">Atmosphere</label>
+          <input type="checkbox" id="Dorm rooms" name="like">
+          <label for="horns">Dorm rooms</label>
+          <input type="checkbox" id="Sports" name="like">
+          <label for="horns">Sports</label>
+       </div>
+      </li>
+
+      <li>
+        <p><font color="red">*</font> Your graduation date:</p>
+        <p><select name="month" id="month" required>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        <input required autocomplete="on"  size = "5" autofocus name="year" type="text" placeholder="year"></p>
+      </li>
+
+      <li>
+      <p>Comments: </p>
+      <p><textarea name="comments" rows="8" cols="70"></textarea></p>
+      </li>
+
+      <li>
+        <p><font color="red">*</font>Are you likely to recommend this school to other prospective students?</p>
+        <p><select name="recommend" id="recommend" required>
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+          </select></p>
+      </li>
+
+      <p><input type="submit" value="Submit"></p>
+    </ul><hr style="height:2px;border-width:0;color:green;background-color:green">
+</form>
+  Data: <input type="text" name="txt" id="data" onchange="myFunction(this.value)">
+  <br/>Average: <input type="text" id="avg">
+  <br/>Maximum: <input type="text" id="max">
+  <br><br><br><br><br>
+  <img style = "position: absolute; bottom: -870px; right: 0px;" src="https://cs.gmu.edu/static/images/logo.png" width="800" heigh="400">
+</body>
+</html>
